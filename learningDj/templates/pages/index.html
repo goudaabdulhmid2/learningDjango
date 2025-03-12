@@ -1,16 +1,7 @@
-<!-- 
-    block
-  -->
+{% extends 'base.html' %}
+{% load static %}
 
-{% extends 'base.html' %} {% block content %} {% for x in name %}
-<p>{{x}}</p>
-{% endfor %} {% if name == 'mido' %}
-<p>mido</p>
-{% elif name == 'ali'%}
-<p>ali</p>
-{%else%}
-<p>hamid</p>
-{% endif %}
-
-<h1>Hello from other side</h1>
+{% block content %}
+ 
+  <img src="{% static 'image/logo.png' %}" alt="">
 {% endblock %}

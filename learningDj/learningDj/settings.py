@@ -118,7 +118,17 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
+# STATIC_ROOT is where static files are collected, not where they are initially stored or developed.
+STATIC_ROOT = os.path.join(BASE_DIR,'static')
 STATIC_URL = 'static/'
+
+# This sets the STATICFILES_DIRS list, which specifies additional directories (outside of app directories) where Django should look for static files.
+# is a list of filesystem paths where static files are stored during development.
+# these files are collected into STATIC_ROOT via collectstatic
+# This is where you store static files during development, separate from app-specific static files (which go in app_name/static/app_name/).
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR,'learningDj/static')
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
