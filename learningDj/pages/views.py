@@ -5,7 +5,7 @@ from django.http import HttpResponse
 
 def index(request):
     context = {
-                'name':'Abdulhamid Ahmed Gouda',
+                'name':'mdo',
                 'age':13435345664564
             }
     return render(request,'pages/index.html',context);
