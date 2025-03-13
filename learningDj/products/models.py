@@ -14,6 +14,10 @@ from django.db import models
 # Create your models here.
 class Product(models.Model):
 
+    # It’s not creating a new product; it’s just adding details about how to display or manage the Product class.
+    # Simple Analogy: Imagine Product is a recipe for a cake, and Meta is a note on the recipe card saying, “Call this cake ‘Chocolate Delight’ and serve it alphabetically by flavor.” It’s extra info to make the recipe (class) work better!
+    # Class Inside Class (Meta): This is a Python feature called a nested class. It’s not unique to Django but is commonly used in Django models to provide metadata. In other Python code, you might see nested classes for other purposes (e.g., organizing related functionality), but in Django, Meta is the standard way to add model options.
+    
     class Meta:
     # verbose_name = 'product'
         ordering = ['-name','price']
@@ -27,7 +31,5 @@ class Product(models.Model):
     def __str__(self):
         return self.name 
     
-    # It’s not creating a new product; it’s just adding details about how to display or manage the Product class.
-    # Simple Analogy: Imagine Product is a recipe for a cake, and Meta is a note on the recipe card saying, “Call this cake ‘Chocolate Delight’ and serve it alphabetically by flavor.” It’s extra info to make the recipe (class) work better!
-    # Class Inside Class (Meta): This is a Python feature called a nested class. It’s not unique to Django but is commonly used in Django models to provide metadata. In other Python code, you might see nested classes for other purposes (e.g., organizing related functionality), but in Django, Meta is the standard way to add model options.
+
   
