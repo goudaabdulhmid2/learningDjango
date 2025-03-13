@@ -1,5 +1,5 @@
 from django.db import models
-
+from datetime import datetime
 # migration mean put this class in django files => python manage.py makemigrations
 # This is like drawing a plan to build or update your shelves based on your blueprint (the Product class).
 # When you change the Product class (e.g., add a new field like image or change max_length), you run python manage.py makemigrations. Django looks at your changes, creates a set of instructions (saved in special files), and says, “Okay, here’s how we’ll update the shelves.”
@@ -46,4 +46,7 @@ class Product(models.Model):
         return self.name 
     
  
-  
+class Test(models.Model):
+    date = models.DateField()
+    time = models.TimeField(null=True)
+    created = models.DateTimeField(default=datetime.now)
