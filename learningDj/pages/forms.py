@@ -1,13 +1,12 @@
 from django import forms
+from .models import Login
 
-# labal
-# initial
-# disable = True , false
-# help_text
-# widget
-# required
 
-class LoginForm(forms.Form):
-    username = forms.CharField(max_length=50,label='name')
-    password = forms.CharField(max_length=50,widget=forms.PasswordInput)
+class LoginForm(forms.ModelForm):
+    class Meta:
+        model = Login
+        fields = '__all__' # get all fileds
+        # fields = ['username']
+
+
 

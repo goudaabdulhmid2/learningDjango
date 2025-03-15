@@ -12,10 +12,13 @@ def index(request):
     return render(request,'pages/index.html',context);
 
 def about(request):
-    username = request.POST.get('username')
-    password = request.POST.get('password')
+    # username = request.POST.get('username')
+    # password = request.POST.get('password')
 
-    data = Login(username=username,password=password)
-    data.save();
+    # data = Login(username=username,password=password)
+    # data.save();
+
+   
+    LoginForm( request.POST).save()
 
     return render(request,'pages/about.html',{'lf':LoginForm});
