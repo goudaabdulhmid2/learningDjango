@@ -18,7 +18,9 @@ def about(request):
     # data = Login(username=username,password=password)
     # data.save();
 
-   
-    LoginForm( request.POST).save()
+    if request.method == 'POST':
+            form = LoginForm(request.POST)
+            if form.is_valid():
+                form.save() 
 
-    return render(request,'pages/about.html',{'lf':LoginForm});
+    return render(request,'pages/about.html',{'lf':LoginForm})
